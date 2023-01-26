@@ -5,43 +5,48 @@
         public static void Main()
         {
 
+            // [1+2+3+4+5] = 15 
+
             List<int> arr =new List<int>();
-            arr.Add(1);
-            arr.Add(2);
-            arr.Add(3);
-            arr.Add(4);
-            arr.Add(5);
+                
+            arr.Add(396285104);
+            arr.Add(573261094);
+            arr.Add(759641832);
+            arr.Add(819230764);
+            arr.Add(364801279);
 
             MiniMaxSum(arr);
         }
 
         public static void MiniMaxSum(List<int> arr)
         {
-            int totalSum = 0;
-            int maxSum = 0;
-            int minSum = 0;
+            long totalSum = 0;
+            int maxNumber=arr[0];
+            int minNumber=arr[0];
 
             foreach(int number in arr)
             {
                 totalSum += number;
-            }
 
-            foreach(int number in arr)
-            {
-                int temptotal = totalSum - number;
-                if (maxSum < temptotal)
+                if (maxNumber < number)
                 {
-                    maxSum = temptotal;
+                    maxNumber = number;
                 }
 
-                if (minSum > temptotal)
+                if (minNumber > number)
                 {
-                    minSum = temptotal;
+                    minNumber = number;
                 }
             }
 
-            Console.WriteLine(minSum + maxSum);
+            string maxMinSum = string.Format("{1} {0}",totalSum-minNumber,totalSum-maxNumber);
 
+          
+
+            Console.WriteLine(maxMinSum);
+
+
+            //2093989309 2548418794
         }
 
     }
