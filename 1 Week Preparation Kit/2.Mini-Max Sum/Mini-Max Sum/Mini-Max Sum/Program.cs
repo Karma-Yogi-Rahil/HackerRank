@@ -18,12 +18,17 @@
             MiniMaxSum(arr);
         }
 
+        /// <summary>
+        /// Finding the max min sum of the given list.
+        /// </summary>
+        /// <param name="arr">List of numbers.</param>
         public static void MiniMaxSum(List<int> arr)
         {
             long totalSum = 0;
             int maxNumber=arr[0];
             int minNumber=arr[0];
 
+            // Calulated total sum of list and finding max and min value.
             foreach(int number in arr)
             {
                 totalSum += number;
@@ -41,13 +46,8 @@
 
             string maxMinSum = string.Format("{1} {0}",totalSum-minNumber,totalSum-maxNumber);
 
-          
-
+            // Expected answer 2093989309 2548418794
             Console.WriteLine(maxMinSum);
-
-
-            //2093989309 2548418794
         }
-
     }
 }
